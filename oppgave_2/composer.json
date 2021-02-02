@@ -1,0 +1,8 @@
+{
+    "name": "eilif/steam-scraper",
+    "description": "A simple script to scrape steam search results for specific params",
+    "require-dev": {},
+    "require": {
+        "voku/simple_html_dom": "^4.7"
+    }
+}
