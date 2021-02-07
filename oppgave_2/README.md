@@ -35,3 +35,5 @@ This will save a file with a timestamp under `./results/` with the matching resu
 * Make a CLI / API that is completely dynamic, where the user can paste/POST a URL with their desired parameters, and get the data returned to them.
  
 * Make filtering that happens in the script dynamic. (User can choose what kinds of reviews they want to filter for, and what letters/words they do not want in the title)
+ 
+* Implement more advanced error handling

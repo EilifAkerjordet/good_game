@@ -66,6 +66,7 @@
     ];
   }
 
+  // Returns an array with structured data from the resutls_html.
   function extractGamesData ($html) {
     $games = [];
     $dom = HtmlDomParser::str_get_html($html);
@@ -94,7 +95,8 @@
     return $games;
   }
 
-  function getAllMatchingGames ($templateUrl, $count) {
+  // Main function that puts it all together
+  function scrape ($templateUrl, $count) {
     $start = 0; // Start should always have an initial value of 0.
     $games = ['results' => []];
     ['response' => $json, 'curl_object' => $ch] = fetchData($templateUrl, $start, $count);
@@ -118,7 +120,7 @@
   // First parameter is the template URL to scrape, the second one is the default value for $count in the string
   // Most of the query parameters are handled in the URL. However, getting results with positive reviews and no 'a' int the
   // title will have to be handled manually.
-  $games = getAllMatchingGames('https://store.steampowered.com/search/results/?query&start=$start&count=$count&dynamic_data=&sort_by=_ASC&maxprice=90&tags=5350&category1=998&supportedlang=norwegian&snr=1_7_7_240_7&infinite=1',
+  $games = scrape('https://store.steampowered.com/search/results/?query&start=$start&count=$count&dynamic_data=&sort_by=_ASC&maxprice=90&tags=5350&category1=998&supportedlang=norwegian&snr=1_7_7_240_7&infinite=1',
     50);
 
   // Save json file with timestamp
