@@ -1,17 +1,12 @@
-
 const LogOutInButton = ({ login = false, ...props }) => {
-  const href = login ? '/auth/steam' : '/auth/logout'
-  const image = login ? '/static/steam.png' : '/static/logout.webp'
-  const buttonText = login ? 'Log in using Steam!' : 'Log out'
+  const href = login ? "/auth/steam" : "/auth/logout";
+  const image = login ? "/static/steam.png" : "/static/logout.webp";
+  const buttonText = login ? "Log in using Steam!" : "Log out";
   return (
-    <a
-      href={href}
-      rel='noopener noreferrer'
-      className='link'
-    >
-      <div className='wrapper' {...props}>
-        <img className='icon' src={image} alt='image' />
-        <h3 className='text'>{buttonText}</h3>
+    <a href={href} rel="noopener noreferrer" className="link">
+      <div className="wrapper" {...props}>
+        <img className="icon" src={image} alt="image" />
+        <h3 className="text">{buttonText}</h3>
       </div>
 
       <style jsx>
@@ -42,7 +37,7 @@ const LogOutInButton = ({ login = false, ...props }) => {
         `}
       </style>
     </a>
-  )
-}
+  );
+};
 
-export default LogOutInButton
+export default LogOutInButton;

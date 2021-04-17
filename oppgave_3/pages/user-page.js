@@ -1,14 +1,15 @@
-import Avatar from '../components/Avatar'
-import LogOutInButton from '../components/LogOutInButton'
+import Avatar from "../components/Avatar";
+import LogOutInButton from "../components/LogOutInButton";
 
-export default function UserPage ({ user }) {
+//teset
+export default function UserPage({ user }) {
   return (
-    <div className='wrapper'>
-      <h1 className='greeting'>Welcome, {user.displayName} !</h1>
+    <div className="wrapper">
+      <h1 className="greeting">Welcome, {user.displayName} !</h1>
       <Avatar
         size={100}
         src={user.photos[2].value}
-        style={{ marginBottom: '30px' }}
+        style={{ marginBottom: "30px" }}
       />
       <LogOutInButton />
 
@@ -30,14 +31,13 @@ export default function UserPage ({ user }) {
         `}
       </style>
     </div>
-
-  )
+  );
 }
 
-export async function getServerSideProps ({ req, res }) {
-  const user = req.user ?? false
+export async function getServerSideProps({ req, res }) {
+  const user = req.user ?? false;
   if (!user) {
-    res.redirect('/')
+    res.redirect("/");
   }
-  return { props: { user } }
+  return { props: { user } };
 }
